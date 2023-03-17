@@ -22,13 +22,14 @@ library(ggprism)
 
 ```{r}
 #── Name gene here ─────────────────────────
-graph_title <- "SOX2"
+graph_title <- 'SOX2'
+csv.file <- 'test_SOX2.csv'
 ```
 
 ```{r}
 #── Upload data set and delete unneeded information ─────────────────────────
 # Note that the qTower program is giving European csv standards (columns separated by ; and decimals as ,)
-dataset <- read.csv('test_SOX2.csv',
+dataset <- read.csv(csv.file ,
     skip = 19,  sep = ';', dec = ',')
 dataset[dataset == "" | dataset == " "] <- NA
 

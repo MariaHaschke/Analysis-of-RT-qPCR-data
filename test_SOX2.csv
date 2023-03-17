@@ -1,0 +1,116 @@
+Title:;SYBRGreen 40x + MeltingCurve
+Date/Time:;02.03.2023 18:44:12;02.03.2023 18:44:12
+Device:;qTOWER³/G;3107C-1033
+Operator:;Eugenio
+Comments:;
+Colors+Dyes:;Pos;Color Module;Dye;Gain;Meas;Refr
+;1;Blue.470.520.11.3;SybrGreen;5;*;
+Heated Lid:;100°C
+TC Protocol:;steps;scan;°C;m:s;goto;loops;delta Temp(°C);delta Time (s);ramp (°C/s
+;1;;96;05:00;0;0;0;0;8
+;2;;96;00:30;0;0;0;0;6
+;3;;60;00:30;0;0;0;0;6
+;4;*;72;00:30;2;39;0;0;6
+;5;;72;05:00;0;0;0;0;6
+;6;*;60;00:15;6;35;1;0;5
+Melt active:;Yes
+Meas. Repeats:;3
+Color Comp.:;
+
+Well;;Sample name;Sample type;Gene;Ct;Mean Ct;Conc. Std.;Mean Conc.;Std.Dev. Ct;Std.Dev. Mean Conc.
+D1;;Std01;Standard;SOX2;6,36;6,3;1;6,7961;0,06;0,3587
+D2;;Std02;Standard;SOX2;9,27;9,05;0,1;0,5224;0,29;0,1435
+D3;;Std03;Standard;SOX2;11,5;11,58;0,01;0,0496;0,12;0,0058
+D4;;Std04;Standard;SOX2;16,01;15,87;0,001;0,0009;0,14;0,0001
+D5;;Std05;Standard;SOX2;19,46;19,19;0,0001;0;0,24;0
+D6;;Std06;Standard;SOX2;22,07;22,11;0;0;0,04;0
+D7;;Std07;Standard;SOX2;26,59;26,56;0;0;0,16;0
+D8;;Std08;Standard;SOX2;29,57;29,86;0;0;0,46;0
+D9;;Std09;Standard;SOX2;33,28;31,13;0;0;1,86;0
+D10;;Std10;Standard;SOX2;30,23;30,11;0;0;0,1;0
+D11;;Std11;Standard;SOX2;31,29;30,93;0;0;0,44;0
+D12;;Std12;Standard;SOX2;31,5;30,55;0;0;1,32;0
+E1;;Std01;Standard;SOX2;6,31;6,3;1;6,7961;0,06;0,3587
+E2;;Std02;Standard;SOX2;9,17;9,05;0,1;0,5224;0,29;0,1435
+E3;;Std03;Standard;SOX2;11,72;11,58;0,01;0,0496;0,12;0,0058
+E4;;Std04;Standard;SOX2;15,85;15,87;0,001;0,0009;0,14;0,0001
+E5;;Std05;Standard;SOX2;19;19,19;0,0001;0;0,24;0
+E6;;Std06;Standard;SOX2;22,1;22,11;0;0;0,04;0
+E7;;Std07;Standard;SOX2;26,71;26,56;0;0;0,16;0
+E8;;Std08;Standard;SOX2;30,39;29,86;0;0;0,46;0
+E9;;Std09;Standard;SOX2;30,06;31,13;0;0;1,86;0
+E10;;Std10;Standard;SOX2;30,09;30,11;0;0;0,1;0
+E11;;Std11;Standard;SOX2;31,07;30,93;0;0;0,44;0
+E12;;Std12;Standard;SOX2;31,1;30,55;0;0;1,32;0
+F1;;Std01;Standard;SOX2;6,25;6,3;1;6,7961;0,06;0,3587
+F2;;Std02;Standard;SOX2;8,72;9,05;0,1;0,5224;0,29;0,1435
+F3;;Std03;Standard;SOX2;11,51;11,58;0,01;0,0496;0,12;0,0058
+F4;;Std04;Standard;SOX2;15,74;15,87;0,001;0,0009;0,14;0,0001
+F5;;Std05;Standard;SOX2;19,12;19,19;0,0001;0;0,24;0
+F6;;Std06;Standard;SOX2;22,15;22,11;0;0;0,04;0
+F7;;Std07;Standard;SOX2;26,39;26,56;0;0;0,16;0
+F8;;Std08;Standard;SOX2;29,63;29,86;0;0;0,46;0
+F9;;Std09;Standard;SOX2;30,05;31,13;0;0;1,86;0
+F10;;Std10;Standard;SOX2;30,02;30,11;0;0;0,1;0
+F11;;Std11;Standard;SOX2;30,44;30,93;0;0;0,44;0
+F12;;Std12;Standard;SOX2;29,04;30,55;0;0;1,32;0
+H4;;;NTC;SOX2;No Ct;;;;;
+H5;;;NTC;SOX2;No Ct;;;;;
+H6;;;NTC;SOX2;No Ct;;;;;
+A1;;Std01;Standard;;;;;;;
+A2;;Std02;Standard;;;;;;;
+A3;;Std03;Standard;;;;;;;
+A4;;Std04;Standard;;;;;;;
+A5;;Std05;Standard;;;;;;;
+A6;;Std06;Standard;;;;;;;
+A7;;Std07;Standard;;;;;;;
+A8;;Std08;Standard;;;;;;;
+A9;;Std09;Standard;;;;;;;
+A10;;Std10;Standard;;;;;;;
+A11;;Std11;Standard;;;;;;;
+A12;;Std12;Standard;;;;;;;
+B1;;Std01;Standard;;;;;;;
+B2;;Std02;Standard;;;;;;;
+B3;;Std03;Standard;;;;;;;
+B4;;Std04;Standard;;;;;;;
+B5;;Std05;Standard;;;;;;;
+B6;;Std06;Standard;;;;;;;
+B7;;Std07;Standard;;;;;;;
+B8;;Std08;Standard;;;;;;;
+B9;;Std09;Standard;;;;;;;
+B10;;Std10;Standard;;;;;;;
+B11;;Std11;Standard;;;;;;;
+B12;;Std12;Standard;;;;;;;
+C1;;Std01;Standard;;;;;;;
+C2;;Std02;Standard;;;;;;;
+C3;;Std03;Standard;;;;;;;
+C4;;Std04;Standard;;;;;;;
+C5;;Std05;Standard;;;;;;;
+C6;;Std06;Standard;;;;;;;
+C7;;Std07;Standard;;;;;;;
+C8;;Std08;Standard;;;;;;;
+C9;;Std09;Standard;;;;;;;
+C10;;Std10;Standard;;;;;;;
+C11;;Std11;Standard;;;;;;;
+C12;;Std12;Standard;;;;;;;
+G1;;;Empty;;;;;;;
+G2;;;Empty;;;;;;;
+G3;;;Empty;;;;;;;
+G4;;;Empty;;;;;;;
+G5;;;Empty;;;;;;;
+G6;;;Empty;;;;;;;
+G7;;;Empty;;;;;;;
+G8;;;Empty;;;;;;;
+G9;;;Empty;;;;;;;
+G10;;;Empty;;;;;;;
+G11;;;Empty;;;;;;;
+G12;;;Empty;;;;;;;
+H1;;;NTC;;;;;;;
+H2;;;NTC;;;;;;;
+H3;;;NTC;;;;;;;
+H7;;;Empty;;;;;;;
+H8;;;Empty;;;;;;;
+H9;;;Empty;;;;;;;
+H10;;;Empty;;;;;;;
+H11;;;Empty;;;;;;;
+H12;;;Empty;;;;;;;
