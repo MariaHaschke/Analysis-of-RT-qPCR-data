@@ -21,53 +21,88 @@ library(ggprism)
 ```
 
 ```{r}
+#── get a list of all the CSV files in the directory
+csv_files <- list.files(pattern = "*.csv")
+
+```
+
+```{r}
 #── Name gene here ─────────────────────────
-graph_title <- 'SOX2'
-csv.file <- '20230303_SOX2.csv'
+#graph_title <- 'SOX2'
+#csv.file <- '20230303_SOX2.csv'
 ```
 
 ```{r}
 #── Upload data set and delete unneeded information ─────────────────────────
+# define a function to read in and process each file
+process_csv <- function(file) {
+  dataset <- read.csv(file,
 # Note that the qTower program is giving European csv standards (columns separated by ; and decimals as ,)
-dataset <- read.csv(csv.file ,
     skip = 19,  sep = ';', dec = ',')
 dataset[dataset == "" | dataset == " "] <- NA
 
+#Exclude unnecessary columns, make a dataset containing only the datat used
 dataset <- subset(dataset, select = -c(Well, X, Mean.Conc., Std.Dev..Mean.Conc.))
-
-dataset
-```
-```{r}
-#── Filter and plot all data related to the gene of interest  ─────────────────────────
 results_gene <- dataset %>% filter(!is.na(Gene))
 
-results_gene
-
-ggplot(results_gene, 
-       aes(x=Sample.name, y=Mean.Ct)) + 
-  geom_point() +
-   geom_errorbar(aes(ymin=Mean.Ct-Std.Dev..Ct, ymax=Mean.Ct+Std.Dev..Ct), width=.2,
-                 position=position_dodge(0.05)) 
-```
-
-```{r}
 #── Check NTCs ─────────────────────────
 NTC <- filter(results_gene, results_gene$`Sample.type` =="NTC") 
+}
+
+# apply the function to each file in the list
+NTC <- lapply(csv_files, process_csv)
+
 NTC
 ```
 
 
-
 ```{r}
-#── Based on the graph, select dilutions that fit the standard curve and because the qTower program is shit I had to add the dilution concentrations by hand
-results <- results_gene %>% filter(Sample.name%in% c("Std01", "Std02","Std03", "Std04","Std05", "Std06", "Std07", "Std08"))
+plot_csv <- function(file) {
+  dataset <- read.csv(file,
+                      
+ # Note that the qTower program is giving European csv standards (columns separated by ; and decimals as ,)
+    skip = 19,  sep = ';', dec = ',')
+dataset[dataset == "" | dataset == " "] <- NA
 
+#Exclude unnecessary columns, make a dataset containing only the datat used
+dataset <- subset(dataset, select = -c(Well, X, Mean.Conc., Std.Dev..Mean.Conc.))
+results_gene <- dataset %>% filter(!is.na(Gene))
+                      
+#── Filter and plot all data ─────────────────────────
+
+ggplot(results_gene, 
+       aes(x=Sample.name, y=Mean.Ct)) + 
+  labs(title= file) +
+  geom_point() +
+   geom_errorbar(aes(ymin=Mean.Ct-Std.Dev..Ct, ymax=Mean.Ct+Std.Dev..Ct), width=.2,
+                 position=position_dodge(0.05)) 
+}
+# apply the function to each file in the list
+g <- lapply(csv_files, plot_csv)
+
+g
 ```
 
+
+
 ```{r}
+fit_csv <- function(file) {
+  dataset <- read.csv(file,
+                      
+ # Note that the qTower program is giving European csv standards (columns separated by ; and decimals as ,)
+    skip = 19,  sep = ';', dec = ',')
+dataset[dataset == "" | dataset == " "] <- NA
+
+#Exclude unnecessary columns, make a dataset containing only the datat used
+dataset <- subset(dataset, select = -c(Well, X, Mean.Conc., Std.Dev..Mean.Conc.))
+results_gene <- dataset %>% filter(!is.na(Gene))
+                      
+#── Based on the graph, select dilutions that fit the standard curve
+results <- results_gene %>% filter(Sample.name%in% c("Std01", "Std02","Std03", "Std04","Std05", "Std06", "Std07", "Std08"))
+
 #── Adding a linear regression
-g <- ggplot(results, 
-       aes(x = Conc..Std. , y = Mean.Ct)) + 
+ggplot(results,
+       aes(x = Conc..Std. , y = Mean.Ct)) +
     geom_point() +
     geom_errorbar(aes(ymin=Mean.Ct-Std.Dev..Ct, ymax=Mean.Ct+Std.Dev..Ct), width=.2,
                  position=position_dodge(0.05)) +
@@ -78,8 +113,7 @@ g <- ggplot(results,
 #── Getting linear regression parameters
 regression_mean <- lm(Mean.Ct ~ log10(Conc..Std.) , data = results)
 summary(regression_mean)
-```
-```{r}
+
 #──  Calculate the efficiency 
 intercept <- as.numeric(regression_mean$coefficients[1])
 slope <- as.numeric(regression_mean$coefficients[2])
@@ -90,18 +124,11 @@ y1=slope*log10(results$Conc..Std.[1]) + intercept
 y2=slope*log10(results$Conc..Std.[5]) + intercept
 dCt=y2 - y1
 dlogCN= log10(results$Conc..Std.[5]) - log10(results$Conc..Std.[1])
-
 ratio = dCt/dlogCN ## this is the slope of the linear regression
-
 efficiency = 10^(-1/slope)
 efficiency
-
 efficiency_percentage = efficiency * 100 / 2
 efficiency_percentage
-```
-
-```{r}
-###── Plotting everything
 
 label_efficiency <- "Efficiency: "
 label_efficiency <- paste0(label_efficiency, as.character(format(efficiency, digit=4)))
@@ -115,10 +142,9 @@ label_r <- paste0(label_r, as.character(format(summary(regression_mean)$r.square
 label_slope<-"Slope: "
 label_slope <- paste0(label_slope, as.character(format(ratio, digit=4)))
 
-
-g_SOX2 <- ggplot(results, 
+ggplot(results, 
        aes(x = Conc..Std. , y = Mean.Ct)) + 
-  labs(title= graph_title) +
+  labs(title= file) +
     geom_point(color = "black",  size = 2) +
     geom_errorbar(aes(ymin=Mean.Ct-Std.Dev..Ct, ymax=Mean.Ct+Std.Dev..Ct), width=.2,
                  position=position_dodge(0.05), color = "gray") +
@@ -132,7 +158,12 @@ g_SOX2 <- ggplot(results,
   annotate("text", x = 0.06, y = 30, label = label_slope) + 
   annotate("text", x = 0.06, y = 26, label = label_efficiency) +
   annotate("text", x = 0.06, y = 24, label = label_efficiency_percentage)
-g_SOX2
+}
 
-ggsave(graph_title, device = "pdf")
+f <- lapply(csv_files, fit_csv)
+
+f
 ```
+
+
+
