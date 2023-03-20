@@ -1,0 +1,116 @@
+Title:;SYBRGreen 40x + MeltingCurve
+Date/Time:;02.03.2023 18:44:12;02.03.2023 18:44:12
+Device:;qTOWER³/G;3107C-1033
+Operator:;Eugenio
+Comments:;
+Colors+Dyes:;Pos;Color Module;Dye;Gain;Meas;Refr
+;1;Blue.470.520.11.3;SybrGreen;5;*;
+Heated Lid:;100°C
+TC Protocol:;steps;scan;°C;m:s;goto;loops;delta Temp(°C);delta Time (s);ramp (°C/s
+;1;;96;05:00;0;0;0;0;8
+;2;;96;00:30;0;0;0;0;6
+;3;;60;00:30;0;0;0;0;6
+;4;*;72;00:30;2;39;0;0;6
+;5;;72;05:00;0;0;0;0;6
+;6;*;60;00:15;6;35;1;0;5
+Melt active:;Yes
+Meas. Repeats:;3
+Color Comp.:;
+
+Well;;Sample name;Sample type;Gene;Ct;Mean Ct;Conc. Std.;Mean Conc.;Std.Dev. Ct;Std.Dev. Mean Conc.
+D1;;Std1;Standard;SOX2;6,36;6,3;1;6,79609372244;0,06;0,358738680615
+D2;;Std2;Standard;SOX2;9,27;9,05;0,1;0,52235346911;0,29;0,143502733074
+D3;;Std3;Standard;SOX2;11,5;11,58;0,01;0,049638168754;0,12;0,005784865761
+D4;;Std4;Standard;SOX2;16,01;15,87;0,001;0,000909674753;0,14;0,000117868849
+D5;;Std5;Standard;SOX2;19,46;19,19;0,0001;4,0930727E-5;0,24;9,020703E-6
+D6;;Std6;Standard;SOX2;22,07;22,11;1E-5;2,700791E-6;0,04;9,672E-8
+D7;;Std7;Standard;SOX2;26,59;26,56;1E-6;4,2404E-8;0,16;6,304E-9
+D8;;Std8;Standard;SOX2;29,57;29,86;1E-7;1,95E-9;0,46;8,29E-10
+D9;;Std9;Standard;SOX2;33,28;31,13;1E-8;5,98E-10;1,86;1,038E-9
+D10;;Std10;Standard;SOX2;30,23;30,11;1E-9;1,542E-9;0,1;1,5E-10
+D11;;Std11;Standard;SOX2;31,29;30,93;1E-10;7,18E-10;0,44;2,93E-10
+D12;;Std12;Standard;SOX2;31,5;30,55;1E-11;1,031E-9;1,32;1,268E-9
+E1;;Std1;Standard;SOX2;6,31;6,3;1;6,79609372244;0,06;0,358738680615
+E2;;Std2;Standard;SOX2;9,17;9,05;0,1;0,52235346911;0,29;0,143502733074
+E3;;Std3;Standard;SOX2;11,72;11,58;0,01;0,049638168754;0,12;0,005784865761
+E4;;Std4;Standard;SOX2;15,85;15,87;0,001;0,000909674753;0,14;0,000117868849
+E5;;Std5;Standard;SOX2;19;19,19;0,0001;4,0930727E-5;0,24;9,020703E-6
+E6;;Std6;Standard;SOX2;22,1;22,11;1E-5;2,700791E-6;0,04;9,672E-8
+E7;;Std7;Standard;SOX2;26,71;26,56;1E-6;4,2404E-8;0,16;6,304E-9
+E8;;Std8;Standard;SOX2;30,39;29,86;1E-7;1,95E-9;0,46;8,29E-10
+E9;;Std9;Standard;SOX2;30,06;31,13;1E-8;5,98E-10;1,86;1,038E-9
+E10;;Std10;Standard;SOX2;30,09;30,11;1E-9;1,542E-9;0,1;1,5E-10
+E11;;Std11;Standard;SOX2;31,07;30,93;1E-10;7,18E-10;0,44;2,93E-10
+E12;;Std12;Standard;SOX2;31,1;30,55;1E-11;1,031E-9;1,32;1,268E-9
+F1;;Std1;Standard;SOX2;6,25;6,3;1;6,79609372244;0,06;0,358738680615
+F2;;Std2;Standard;SOX2;8,72;9,05;0,1;0,52235346911;0,29;0,143502733074
+F3;;Std3;Standard;SOX2;11,51;11,58;0,01;0,049638168754;0,12;0,005784865761
+F4;;Std4;Standard;SOX2;15,74;15,87;0,001;0,000909674753;0,14;0,000117868849
+F5;;Std5;Standard;SOX2;19,12;19,19;0,0001;4,0930727E-5;0,24;9,020703E-6
+F6;;Std6;Standard;SOX2;22,15;22,11;1E-5;2,700791E-6;0,04;9,672E-8
+F7;;Std7;Standard;SOX2;26,39;26,56;1E-6;4,2404E-8;0,16;6,304E-9
+F8;;Std8;Standard;SOX2;29,63;29,86;1E-7;1,95E-9;0,46;8,29E-10
+F9;;Std9;Standard;SOX2;30,05;31,13;1E-8;5,98E-10;1,86;1,038E-9
+F10;;Std10;Standard;SOX2;30,02;30,11;1E-9;1,542E-9;0,1;1,5E-10
+F11;;Std11;Standard;SOX2;30,44;30,93;1E-10;7,18E-10;0,44;2,93E-10
+F12;;Std12;Standard;SOX2;29,04;30,55;1E-11;1,031E-9;1,32;1,268E-9
+H4;;;NTC;SOX2;No Ct;;;;;
+H5;;;NTC;SOX2;No Ct;;;;;
+H6;;;NTC;SOX2;No Ct;;;;;
+A1;;Std1;Standard;;;;;;;
+A2;;Std2;Standard;;;;;;;
+A3;;Std3;Standard;;;;;;;
+A4;;Std4;Standard;;;;;;;
+A5;;Std5;Standard;;;;;;;
+A6;;Std6;Standard;;;;;;;
+A7;;Std7;Standard;;;;;;;
+A8;;Std8;Standard;;;;;;;
+A9;;Std9;Standard;;;;;;;
+A10;;Std10;Standard;;;;;;;
+A11;;Std11;Standard;;;;;;;
+A12;;Std12;Standard;;;;;;;
+B1;;Std1;Standard;;;;;;;
+B2;;Std2;Standard;;;;;;;
+B3;;Std3;Standard;;;;;;;
+B4;;Std4;Standard;;;;;;;
+B5;;Std5;Standard;;;;;;;
+B6;;Std6;Standard;;;;;;;
+B7;;Std7;Standard;;;;;;;
+B8;;Std8;Standard;;;;;;;
+B9;;Std9;Standard;;;;;;;
+B10;;Std10;Standard;;;;;;;
+B11;;Std11;Standard;;;;;;;
+B12;;Std12;Standard;;;;;;;
+C1;;Std1;Standard;;;;;;;
+C2;;Std2;Standard;;;;;;;
+C3;;Std3;Standard;;;;;;;
+C4;;Std4;Standard;;;;;;;
+C5;;Std5;Standard;;;;;;;
+C6;;Std6;Standard;;;;;;;
+C7;;Std7;Standard;;;;;;;
+C8;;Std8;Standard;;;;;;;
+C9;;Std9;Standard;;;;;;;
+C10;;Std10;Standard;;;;;;;
+C11;;Std11;Standard;;;;;;;
+C12;;Std12;Standard;;;;;;;
+G1;;;Empty;;;;;;;
+G2;;;Empty;;;;;;;
+G3;;;Empty;;;;;;;
+G4;;;Empty;;;;;;;
+G5;;;Empty;;;;;;;
+G6;;;Empty;;;;;;;
+G7;;;Empty;;;;;;;
+G8;;;Empty;;;;;;;
+G9;;;Empty;;;;;;;
+G10;;;Empty;;;;;;;
+G11;;;Empty;;;;;;;
+G12;;;Empty;;;;;;;
+H1;;;NTC;;;;;;;
+H2;;;NTC;;;;;;;
+H3;;;NTC;;;;;;;
+H7;;;Empty;;;;;;;
+H8;;;Empty;;;;;;;
+H9;;;Empty;;;;;;;
+H10;;;Empty;;;;;;;
+H11;;;Empty;;;;;;;
+H12;;;Empty;;;;;;;
