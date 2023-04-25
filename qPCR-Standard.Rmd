@@ -21,39 +21,43 @@ library(ggprism)
 ```
 
 ```{r}
-
-#── get a list of all the CSV files in the directory
+# Get a list of all csv files in the directory --------
 csv_files <- list.files(pattern = "*.csv")
 source('R/functions.R')
 ```
 
 ```{r}
-#── Name gene here ─────────────────────────
+# Name gene here --------------------------------------
 #graph_title <- 'SOX2'
 #csv.file <- '20230303_SOX2.csv'
 ```
 
 ```{r}
-# ── Check NTCs ─────────────────────────
-# Apply the function to read in and process each file to each file in the csv list, then read out the NTCs 
+# Check NTCs ------------------------------------------
+# Apply the function to read in and process each file to each file in the csv 
+# list, then read out the NTCs 
 NTC <- lapply(csv_files, process_csv)
 
 NTC
 ```
 
 ```{r}
-# apply the function to each file in the list
+# Apply the function to each file in the list ----------
 g <- lapply(csv_files, plot_csv)
 
 g
 ```
 
 ```{r}
+# Draw ggplot graph -----------------------------------
+# fit_csv does by default calculate with the first 8 Standard dilutions, if according to the first plot more can be included the function needs to be altered
 
+source('R/analysis_efficiency.R')
 f <- lapply(csv_files, fit_csv)
 
 f
 ```
+
 
 
 

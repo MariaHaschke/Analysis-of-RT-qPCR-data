@@ -1772,36 +1772,20 @@ table save a csv file for each gene. Make sure the table is sorted by
 in chunk.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI+KUgOKUgCBBdHRhY2hpbmcgcGFja2FnZXMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIFxubGlicmFyeShncm93dGhjdXJ2ZXIpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI+KUgOKUgCBBdHRhY2hpbmcgcGFja2FnZXMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIFxubGlicmFyeShncm93dGhjdXJ2ZXIpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KGdncHJpc20pXG5gYGAifQ== -->
 <pre class="r"><code>#── Attaching packages ─────────────────────────────────────── 
 library(growthcurver)
 library(ggplot2)
-library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4xIOKUgOKUgFxu4pyUIHRpYmJsZSAgMy4xLjcgICAgIOKclCBkcGx5ciAgIDEuMC45XG7inJQgdGlkeXIgICAxLjIuMCAgICAg4pyUIHN0cmluZ3IgMS40LjBcbuKclCByZWFkciAgIDIuMS4yICAgICDinJQgZm9yY2F0cyAwLjUuMVxu4pyUIHB1cnJyICAgMC4zLjQgICAgIFxu4pSA4pSAIENvbmZsaWN0cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlX2NvbmZsaWN0cygpIOKUgOKUgFxu4pyWIGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbuKcliBkcGx5cjo6bGFnKCkgICAgbWFza3Mgc3RhdHM6OmxhZygpXG4ifQ== -->
-<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      
-── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.1 ──
-✔ tibble  3.1.7     ✔ dplyr   1.0.9
-✔ tidyr   1.2.0     ✔ stringr 1.4.0
-✔ readr   2.1.2     ✔ forcats 0.5.1
-✔ purrr   0.3.4     
-── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkoZ2dwcmlzbSlcbmBgYCJ9 -->
-<pre class="r"><code>library(dplyr)
+library(tidyverse)
+library(dplyr)
 library(ggprism)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI+KUgOKUgCBnZXQgYSBsaXN0IG9mIGFsbCB0aGUgQ1NWIGZpbGVzIGluIHRoZSBkaXJlY3RvcnlcbmNzdl9maWxlcyA8LSBsaXN0LmZpbGVzKHBhdHRlcm4gPSBcIiouY3N2XCIpXG5zb3VyY2UoJ1IvZnVuY3Rpb25zLlInKVxuYGBgIn0= -->
-<pre class="r"><code>#── get a list of all the CSV files in the directory
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBHZXQgYSBsaXN0IG9mIGFsbCBjc3YgZmlsZXMgaW4gdGhlIGRpcmVjdG9yeSAtLS0tLS0tLVxuY3N2X2ZpbGVzIDwtIGxpc3QuZmlsZXMocGF0dGVybiA9IFwiKi5jc3ZcIilcbnNvdXJjZSgnUi9mdW5jdGlvbnMuUicpXG5gYGAifQ== -->
+<pre class="r"><code># Get a list of all csv files in the directory --------
 csv_files &lt;- list.files(pattern = &quot;*.csv&quot;)
 source(&#39;R/functions.R&#39;)</code></pre>
 <!-- rnb-source-end -->
@@ -1809,32 +1793,19 @@ source(&#39;R/functions.R&#39;)</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuI+KUgOKUgCBOYW1lIGdlbmUgaGVyZSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbiNncmFwaF90aXRsZSA8LSAnU09YMidcbiNjc3YuZmlsZSA8LSAnMjAyMzAzMDNfU09YMi5jc3YnXG5gYGBcbmBgYCJ9 -->
-<pre class="r"><code>```r
-#── Name gene here ─────────────────────────
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBOYW1lIGdlbmUgaGVyZSAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuI2dyYXBoX3RpdGxlIDwtICdTT1gyJ1xuI2Nzdi5maWxlIDwtICcyMDIzMDMwM19TT1gyLmNzdidcbmBgYCJ9 -->
+<pre class="r"><code># Name gene here --------------------------------------
 #graph_title &lt;- &#39;SOX2&#39;
 #csv.file &lt;- &#39;20230303_SOX2.csv&#39;</code></pre>
-<pre><code>
-&lt;!-- rnb-source-end --&gt;
-
-&lt;!-- rnb-chunk-end --&gt;
-
-
-&lt;!-- rnb-text-begin --&gt;
-
-
-
-&lt;!-- rnb-text-end --&gt;
-
-
-&lt;!-- rnb-chunk-begin --&gt;
-
-
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyDilIDilIAgQ2hlY2sgTlRDcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbiMgQXBwbHkgdGhlIGZ1bmN0aW9uIHRvIHJlYWQgaW4gYW5kIHByb2Nlc3MgZWFjaCBmaWxlIHRvIGVhY2ggZmlsZSBpbiB0aGUgY3N2IGxpc3QsIHRoZW4gcmVhZCBvdXQgdGhlIE5UQ3MgXG5OVEMgPC0gbGFwcGx5KGNzdl9maWxlcywgcHJvY2Vzc19jc3YpXG5cbk5UQ1xuYGBgIn0= --&gt;
-
-```r
-# ── Check NTCs ─────────────────────────
-# Apply the function to read in and process each file to each file in the csv list, then read out the NTCs 
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDaGVjayBOVENzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuIyBBcHBseSB0aGUgZnVuY3Rpb24gdG8gcmVhZCBpbiBhbmQgcHJvY2VzcyBlYWNoIGZpbGUgdG8gZWFjaCBmaWxlIGluIHRoZSBjc3YgXG4jIGxpc3QsIHRoZW4gcmVhZCBvdXQgdGhlIE5UQ3MgXG5OVEMgPC0gbGFwcGx5KGNzdl9maWxlcywgcHJvY2Vzc19jc3YpXG5cbk5UQ1xuYGBgIn0= -->
+<pre class="r"><code># Check NTCs ------------------------------------------
+# Apply the function to read in and process each file to each file in the csv 
+# list, then read out the NTCs 
 NTC &lt;- lapply(csv_files, process_csv)
 
 NTC</code></pre>
@@ -1842,7 +1813,7 @@ NTC</code></pre>
 <!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbiJ9 -->
 <pre><code>[[1]]</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMyDDlyA3XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUF3dHlpVERtaXVCaVlHQmdabUJoQXBLc1FDWURhMmlJbTY0RkExaUVnWkdCaFlFVFJGY0FwWVdCREhZZ0ZnRHJZR0RnL0E4RVdHaUlQRVFqczErSU13NG1xa0tXWVA4SVE1eHNCZ1kra0ZvSG0rbGN0Z1dMcnp2WTlNZG9mRDNVNzJCVDlkQjluVWcxc2ZMMUgwQStaRitFVHNQa0dYQUNsTkJnelV2TVRTMkdlb0FkS3NnZG5KaGJrSk9xQjVKREV5cXBMSUFKc2JpbjVzSFlUTTRsVUJhN2IycGluaDZjeStXY241ZXNweGRja3FJSE53bklka2t0MHdNcFFuVU1aMUYrdVI3TVFid2dZeHNnVG1aR2QzVnlUbUl4ek5Vd1FhNlV4SkpFdmJRaWtLTVpHUDZoYVdIUEx5akp6TThEYW1JQ1JUNHJtbWJHSWpRQi90SThrRXRTZEpNelN2T3lkVTFCRm9DbElZQVh5bVpHWXJORHJHU0NKUnhXcUZGc3FYbnBtZkNnWXMxSlRFck5nWEw0Z0Q0R2UxaXZvQ2d6RHg1b1FORml2Wkw4a2tTWU9xN2svQnlZQ05odkRQOEFaSVIrdWZNQ0FBQT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMyDDlyA3XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUF3dHlpVERtaXVCaVlHQmdabUJoQXBLc1FDWURhMmlJbTY0RkExaUVnWkdCaFlFVFJGY0FwWVdCREhZZ0ZnRHJZR0RnL0E4RVdHaUlQRVFqczErSU13NG1xa0tXWVA4SVE1eHNCZ1kra0ZvSG0rbGN0Z1dMcnp2WTlNZG9mRDNVNzJCVDlkQjluVWcxc2ZMMUgwQStaRitFVHNQa0dYQUNsTkJnelV2TVRTMkdlb0FkS3NnZG5KaGJrSk9xQjVKREV5cXBMSUFKc2JpbjVzSFlUTTRsVUJhN2IycGluaDZjeStXY241ZXNweGRja3FJSE53bklka2t0MHdNcFFuVU1aMUYrdVI3TVFid2dZeHNnVG1aR2QzVnlUbUl4ek5Vd1FhNlV4SkpFdmJRaWtLTVpHUDZoYVdIUEx5akp6TThEYW1JQ1JUNHJtbWJHSWpRQi90SThrRXRTZEpNelN2T3lkVTFBRm9DbElZQVh5bVpHWXJORHJHU0NKUnhXcUZGc3FYbnBtZkNnWXMxSlRFck5nWEw0Z0Q0R2UxaXZvQ2d6RHg1b1FORml2Wkw4a2tTWU9xN2svQnlZQ05odkRQOEFScVlnMnZNQ0FBQT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Sample.name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Sample.type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Gene"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Ct"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Mean.Ct"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Conc..Std."],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Std.Dev..Ct"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"NA","2":"NTC","3":"SOX1","4":"28.59","5":"28.59","6":"NA","7":"0"},{"1":"NA","2":"NTC","3":"SOX1","4":"28.56","5":"28.56","6":"NA","7":"0"},{"1":"NA","2":"NTC","3":"SOX1","4":"28.48","5":"28.48","6":"NA","7":"0"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
@@ -1853,7 +1824,7 @@ NTC</code></pre>
 <pre><code>
 [[2]]</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMyDDlyA3XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE2VlN6VTZFTUJDZUJXb0RabGNUWDhBWG9BZU5pWGMyZW5KTlpFMjRWcWhLWkZzQ1hYOU8raXcrb1Urd2Exc29rY2IxNGlRdzMzenowMithM3N5ejB5aUxBTUNId0ZOL3BDQ2cyK1ZGZkE2R2dRa0VFR3IvcXRKSENtRDFIWm9PZ0hDcjdCZmY1YnRHZjdGTWRzQnhZWkJlWnljNzhiZ1dMY1J4SXY4SUFHYTYvUDFMTDRRL1hmLy8vT2h5RUtjcjF2WWFjVS91cDNSVlY0em9uRVBKdDlwU3dTWGpGbnZERnZpS1VVNkdNRW9FendsSlpVR0dTUXJQMlRQUlJXTXhZU05laUJVMDFXTS93Smp2cXM0cjJsclZsb3dLS2ltNWI3Um9nSTNUZ2tVdFM4RlZrNmZmQW5LYUo0MURIS3k1VmxMRStlT2FQOFZuK2dDVDdtemFZLzhIeHQyUm5uMUhxQisxeC9oRE9Wd1ZxdWdkcS9wZ3BqWTJDNU82S2Zsd2FZcHRpUlNTMnJvb0Y1Vmx6RzZ3K1FZcHFYektBZ01BQUE9PSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Nywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMyDDlyA3XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE2VlN6VTZFTUJDZUJXb0RabGNUWDhBWG9BZjE0SjJObmx3VFdST3VGYW9TMlpaQTE1K1RQb3RQNkJQczJoWktwSEc5T0FuTU45Lzg5SnVtTi9Qc05Nb2lBUEFoOE5RZktRam9kbmtSbjROaFlBSUJoTnEvcXZTUkFsaDloNllESU53cSs4VjMrYTdSWHl5VEhYQmNHS1RYMmNsT1BLNUZDM0djeUQ4Q2dKa3VmLy9TQytGUDEvOC9QN29jeE9tS3RiMUczSlA3S1YzVkZTTTY1MUR5cmJaVWNNbTR4ZDZ3QmI1aWxKTWhqQkxCYzBKU1daQmhrc0p6OWt4MDBWaE0ySWdYWWdWTjlkZ1BNT2E3cXZPS3RsYTFKYU9DU2tydUd5MGFZT08wWUZITFVuRFY1T20zZ0p6bVNlTVFCMnV1bFJSeC9yam1UL0daUHNDa081djIyUCtCY1hla1o5OFI2a2Z0TWY1UURsZUZLbnJIcWo2WXFZM053cVJ1U2o1Y21tSmJJb1drdGk3S1JXVVpzeHRzdmdFTGl5S3BBZ01BQUE9PSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Sample.name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Sample.type"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Gene"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Ct"],"name":[4],"type":["chr"],"align":["left"]},{"label":["Mean.Ct"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Conc..Std."],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Std.Dev..Ct"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"NA","2":"NTC","3":"SOX2","4":"No Ct","5":"NA","6":"NA","7":"NA"},{"1":"NA","2":"NTC","3":"SOX2","4":"No Ct","5":"NA","6":"NA","7":"NA"},{"1":"NA","2":"NTC","3":"SOX2","4":"No Ct","5":"NA","6":"NA","7":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
@@ -1867,8 +1838,8 @@ NTC</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBhcHBseSB0aGUgZnVuY3Rpb24gdG8gZWFjaCBmaWxlIGluIHRoZSBsaXN0XG5nIDwtIGxhcHBseShjc3ZfZmlsZXMsIHBsb3RfY3N2KVxuXG5nXG5gYGAifQ== -->
-<pre class="r"><code># apply the function to each file in the list
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBcHBseSB0aGUgZnVuY3Rpb24gdG8gZWFjaCBmaWxlIGluIHRoZSBsaXN0IC0tLS0tLS0tLS1cbmcgPC0gbGFwcGx5KGNzdl9maWxlcywgcGxvdF9jc3YpXG5cbmdcbmBgYCJ9 -->
+<pre class="r"><code># Apply the function to each file in the list ----------
 g &lt;- lapply(csv_files, plot_csv)
 
 g</code></pre>
@@ -1888,8 +1859,9 @@ g</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5mIDwtIGxhcHBseShjc3ZfZmlsZXMsIGZpdF9jc3YpXG5cbmZcbmBgYCJ9 -->
-<pre class="r"><code>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBEcmF3IGdncGxvdCBncmFwaCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuc291cmNlKCdSL2FuYWx5c2lzX2VmZmljaWVuY3kuUicpXG5mIDwtIGxhcHBseShjc3ZfZmlsZXMsIGZpdF9jc3YpXG5cbmZcbmBgYCJ9 -->
+<pre class="r"><code># Draw ggplot graph -----------------------------------
+source(&#39;R/analysis_efficiency.R&#39;)
 f &lt;- lapply(csv_files, fit_csv)
 
 f</code></pre>
@@ -1909,7 +1881,7 @@ f</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUlQtcVBDUiBTdGFuZGFyZCBDdXJ2ZSBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpUaGlzIGNvZGUgaXMgd3JpdHRlbiB0byBhbmFseXNlIFJUIHEtUENSIHJlc3VsdHMgZnJvbSBxVG93ZXIgQW5hbHl0aWMgSmVuYS4gCgpHZXR0aW5nIHRoZSBkYXRhc2V0OiAKVXBsb2FkIHRoZSBkYXRhIChPcGVuIFByb2plY3QuLi4pZnJvbSB0aGUgcVRvd2VyIGludG8gcVBDUnNvZnQ0LjEgc29mdHdhcmUuCldoZW4gc2V0dGluZyBkaWx1dGlvbiBzZXJpZXMgaW4gKlNldHRpbmdzKiBtYWtlIHN1cmUgdGhlIGZpcnN0IHNpbmdsZSBudW1iZXJzIGFyZSBsYWJlbGVkIHdpdGggMDEuLi4wOSAoTmFtZSBvZiBTdGFuZGFyZDogU3RkMCBmb3IgdGhlIHNpbmdsZSBkaWdpdHMsIHRoZW4gU3RkIDEwIGV0Yy4pLiBTZXQgYWxsIHRyaXBsaWNhdGVzIGluIGRpbHV0aW9ucyBmcm9tIDEgdG8gMTIgYW5kIGxhYmVsIHdpdGggdGhlIGdlbmUgYWNjb3JkaW5nbHkuIApUaGVuIGdldCAqQWJzb2x1dGUgUXVhbnRpZmljYXRpb24qIGFuZCBmcm9tIHRoZSB0YWJsZSBzYXZlIGEgY3N2IGZpbGUgZm9yIGVhY2ggZ2VuZS4gTWFrZSBzdXJlIHRoZSB0YWJsZSBpcyBzb3J0ZWQgYnkgKmdlbmUqLgoKRXhlY3V0aW5nIGNodW5rIGJ5ICpDbWQrU2hpZnQrRW50ZXIqIHdoaWxlIGNvdXJzZXIgaXMgcGxhY2VkIGluIGNodW5rLiAKCmBgYHtyfQoj4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgCmxpYnJhcnkoZ3Jvd3RoY3VydmVyKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KGdncHJpc20pCmBgYAoKYGBge3J9Cgoj4pSA4pSAIGdldCBhIGxpc3Qgb2YgYWxsIHRoZSBDU1YgZmlsZXMgaW4gdGhlIGRpcmVjdG9yeQpjc3ZfZmlsZXMgPC0gbGlzdC5maWxlcyhwYXR0ZXJuID0gIiouY3N2IikKc291cmNlKCdSL2Z1bmN0aW9ucy5SJykKYGBgCgpgYGB7cn0KI+KUgOKUgCBOYW1lIGdlbmUgaGVyZSDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAKI2dyYXBoX3RpdGxlIDwtICdTT1gyJwojY3N2LmZpbGUgPC0gJzIwMjMwMzAzX1NPWDIuY3N2JwpgYGAKCmBgYHtyfQojIOKUgOKUgCBDaGVjayBOVENzIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgAojIEFwcGx5IHRoZSBmdW5jdGlvbiB0byByZWFkIGluIGFuZCBwcm9jZXNzIGVhY2ggZmlsZSB0byBlYWNoIGZpbGUgaW4gdGhlIGNzdiBsaXN0LCB0aGVuIHJlYWQgb3V0IHRoZSBOVENzIApOVEMgPC0gbGFwcGx5KGNzdl9maWxlcywgcHJvY2Vzc19jc3YpCgpOVEMKYGBgCgpgYGB7cn0KIyBhcHBseSB0aGUgZnVuY3Rpb24gdG8gZWFjaCBmaWxlIGluIHRoZSBsaXN0CmcgPC0gbGFwcGx5KGNzdl9maWxlcywgcGxvdF9jc3YpCgpnCmBgYAoKYGBge3J9CgpmIDwtIGxhcHBseShjc3ZfZmlsZXMsIGZpdF9jc3YpCgpmCmBgYAoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUlQtcVBDUiBTdGFuZGFyZCBDdXJ2ZSBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpUaGlzIGNvZGUgaXMgd3JpdHRlbiB0byBhbmFseXNlIFJUIHEtUENSIHJlc3VsdHMgZnJvbSBxVG93ZXIgQW5hbHl0aWMgSmVuYS4gCgpHZXR0aW5nIHRoZSBkYXRhc2V0OiAKVXBsb2FkIHRoZSBkYXRhIChPcGVuIFByb2plY3QuLi4pZnJvbSB0aGUgcVRvd2VyIGludG8gcVBDUnNvZnQ0LjEgc29mdHdhcmUuCldoZW4gc2V0dGluZyBkaWx1dGlvbiBzZXJpZXMgaW4gKlNldHRpbmdzKiBtYWtlIHN1cmUgdGhlIGZpcnN0IHNpbmdsZSBudW1iZXJzIGFyZSBsYWJlbGVkIHdpdGggMDEuLi4wOSAoTmFtZSBvZiBTdGFuZGFyZDogU3RkMCBmb3IgdGhlIHNpbmdsZSBkaWdpdHMsIHRoZW4gU3RkIDEwIGV0Yy4pLiBTZXQgYWxsIHRyaXBsaWNhdGVzIGluIGRpbHV0aW9ucyBmcm9tIDEgdG8gMTIgYW5kIGxhYmVsIHdpdGggdGhlIGdlbmUgYWNjb3JkaW5nbHkuIApUaGVuIGdldCAqQWJzb2x1dGUgUXVhbnRpZmljYXRpb24qIGFuZCBmcm9tIHRoZSB0YWJsZSBzYXZlIGEgY3N2IGZpbGUgZm9yIGVhY2ggZ2VuZS4gTWFrZSBzdXJlIHRoZSB0YWJsZSBpcyBzb3J0ZWQgYnkgKmdlbmUqLgoKRXhlY3V0aW5nIGNodW5rIGJ5ICpDbWQrU2hpZnQrRW50ZXIqIHdoaWxlIGNvdXJzZXIgaXMgcGxhY2VkIGluIGNodW5rLiAKCmBgYHtyfQoj4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgCmxpYnJhcnkoZ3Jvd3RoY3VydmVyKQpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGRwbHlyKQpsaWJyYXJ5KGdncHJpc20pCmBgYAoKYGBge3J9CiMgR2V0IGEgbGlzdCBvZiBhbGwgY3N2IGZpbGVzIGluIHRoZSBkaXJlY3RvcnkgLS0tLS0tLS0KY3N2X2ZpbGVzIDwtIGxpc3QuZmlsZXMocGF0dGVybiA9ICIqLmNzdiIpCnNvdXJjZSgnUi9mdW5jdGlvbnMuUicpCmBgYAoKYGBge3J9CiMgTmFtZSBnZW5lIGhlcmUgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KI2dyYXBoX3RpdGxlIDwtICdTT1gyJwojY3N2LmZpbGUgPC0gJzIwMjMwMzAzX1NPWDIuY3N2JwpgYGAKCmBgYHtyfQojIENoZWNrIE5UQ3MgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMgQXBwbHkgdGhlIGZ1bmN0aW9uIHRvIHJlYWQgaW4gYW5kIHByb2Nlc3MgZWFjaCBmaWxlIHRvIGVhY2ggZmlsZSBpbiB0aGUgY3N2IAojIGxpc3QsIHRoZW4gcmVhZCBvdXQgdGhlIE5UQ3MgCk5UQyA8LSBsYXBwbHkoY3N2X2ZpbGVzLCBwcm9jZXNzX2NzdikKCk5UQwpgYGAKCmBgYHtyfQojIEFwcGx5IHRoZSBmdW5jdGlvbiB0byBlYWNoIGZpbGUgaW4gdGhlIGxpc3QgLS0tLS0tLS0tLQpnIDwtIGxhcHBseShjc3ZfZmlsZXMsIHBsb3RfY3N2KQoKZwpgYGAKCmBgYHtyfQojIERyYXcgZ2dwbG90IGdyYXBoIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMgZml0X2NzdiBkb2VzIGJ5IGRlZmF1bHQgY2FsY3VsYXRlIHdpdGggdGhlIGZpcnN0IDggU3RhbmRhcmQgZGlsdXRpb25zLCBpZiBhY2NvcmRpbmcgdG8gdGhlIGZpcnN0IHBsb3QgbW9yZSBjYW4gYmUgaW5jbHVkZWQgdGhlIGZ1bmN0aW9uIG5lZWRzIHRvIGJlIGFsdGVyZWQKCnNvdXJjZSgnUi9hbmFseXNpc19lZmZpY2llbmN5LlInKQpmIDwtIGxhcHBseShjc3ZfZmlsZXMsIGZpdF9jc3YpCgpmCmBgYAoKCgoK</div>
 
 
 
