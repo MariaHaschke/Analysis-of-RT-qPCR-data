@@ -57,10 +57,10 @@ fit_csv <- function(file) {
   label_efficiency <- paste0(label_efficiency, as.character(format(efficiency, 
                                                                    digit = 4)))
   
-  label_efficiency_percentage <- "Efficiency: "
+  label_efficiency_percentage <- "Efficiency (%): "
   label_efficiency_percentage <- paste0(label_efficiency_percentage, 
                                         as.character(format(efficiency_percentage, 
-                                                            digit = 4)), "%")
+                                                            digit = 4)))
   
   label_r <- "R-squared: "
   label_r <- paste0(label_r, as.character(format(
@@ -87,3 +87,5 @@ fit_csv <- function(file) {
     annotate("text", x = 0.06, y = 26, label = label_efficiency) +
     annotate("text", x = 0.06, y = 24, label = label_efficiency_percentage)
 }
+
+

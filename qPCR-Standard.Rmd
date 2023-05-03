@@ -55,6 +55,11 @@ g
 source('R/analysis_efficiency.R')
 f <- lapply(csv_files, fit_csv)
 
+# Store results in list
+#my_list <- list(efficiency = efficiency, efficiency_percentage = efficiency_percentage)
+# my_list <- list(df)
+# my_list <-
+
 f
 ```
 
