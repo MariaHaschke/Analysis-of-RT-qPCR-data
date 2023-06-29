@@ -42,15 +42,14 @@ fit_csv <- function(file) {
   
   
   # Calculate 2 predicted Ct values -----------------------------------------
-  # Ct_mean = slope*(log(Qty)) + intercept
-  y1 = slope*log10(results$Conc..Std.[1]) + intercept
-  y2 = slope*log10(results$Conc..Std.[5]) + intercept
-  dCt = y2 - y1
-  dlogCN = log10(results$Conc..Std.[5]) - log10(results$Conc..Std.[1])
-  ratio = dCt/dlogCN ## this is the slope of the linear regression
-  efficiency = 10^(-1/slope)
-  efficiency
-  efficiency_percentage = efficiency * 100 / 2
+  Ct_mean = slope*(log(Qty)) + intercept
+  y1 <- slope*log10(results$Conc..Std.[1]) + intercept
+  y2 <- slope*log10(results$Conc..Std.[5]) + intercept
+  dCt <- y2 - y1
+  dlogCN <- log10(results$Conc..Std.[5]) - log10(results$Conc..Std.[1])
+  ratio <- dCt/dlogCN ## this is the slope of the linear regression
+  efficiency <- 10^(-1/slope)
+  efficiency_percentage <- efficiency * 100 / 2
   efficiency_percentage
   
   label_efficiency <- "Efficiency: "

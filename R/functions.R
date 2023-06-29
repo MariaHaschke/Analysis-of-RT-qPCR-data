@@ -47,4 +47,3 @@ results_gene <- dataset %>% filter(!is.na(Gene))
                   position = position_dodge(0.05))
 }
 
-
